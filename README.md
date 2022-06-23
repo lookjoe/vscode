@@ -1,13 +1,18 @@
-# flutter getx create page README
-## 功能
 
-flutter getx微框架
+# flutter使用GetX微框架时快捷生成文件
 
-创建文件夹自动生成logic、state、view
+## 使用方法
+  1.command+shift+p 搜索 Flutter: GetX Create Page 输入文件名称
 
-### 0.0.1
+  2.右键目录选择Flutter: GetX Create Page输入文件名称
 
-第一版
+生成文件目录
+```
+  demo_page
+    logic.dart
+    state.dart
+    view.dart
+```
 
 * [vscode](https://marketplace.visualstudio.com/items?itemName=zxc.getx-create-page&ssr=false#review-details)
 * [github](https://github.com/lookjoe/vscode.git)

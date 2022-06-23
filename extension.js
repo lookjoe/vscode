@@ -4,7 +4,7 @@ const vscode = require('vscode');
 const fs = require('fs');
 
 function getLogic(path) {
-  return `import 'package:get/get.dart'
+  return `import 'package:get/get.dart';
   
 import 'state.dart';
   
@@ -42,9 +42,9 @@ class ${path}Page extends StatelessWidget {
 function changePathFunc(path) {
   let result = [];
   [...path].forEach((item, index, array) => {
-    array[0] = array[0].toUpperCase()
+    array[0] = array[0].toUpperCase();
     if (item === '_') {
-      array[index + 1] = array[index + 1].toUpperCase()
+      array[index + 1] = array[index + 1].toUpperCase();
     }
     result.push(array[index]);
   })

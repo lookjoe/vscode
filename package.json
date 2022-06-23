@@ -2,8 +2,8 @@
   "name": "getx-create-page",
   "publisher": "zxc",
   "displayName": "Flutter Getx Create Page",
-  "description": "",
-  "version": "0.0.2",
+  "description": "getx 文件生成器",
+  "version": "0.0.4",
   "engines": {
     "vscode": "^1.68.0"
   },
@@ -18,7 +18,7 @@
     "commands": [
       {
         "command": "getx-create-page.helloWorld",
-        "title": "flutter: GetX create Page"
+        "title": "Flutter: Getx Create Page"
       }
     ],
     "menus": {
@@ -31,6 +31,7 @@
       ]
     }
   },
+  "icon": "media/getx.png",
   "scripts": {
     "lint": "eslint .",
     "pretest": "npm run lint",
