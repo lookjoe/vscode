@@ -1,0 +1,80 @@
+Arguments: 
+  /Users/ndy/.nvm/versions/node/v16.16.0/bin/node /usr/local/bin/yarn i
+
+PATH: 
+  /Users/ndy/.nvm/versions/node/v16.16.0/bin:/usr/local/opt/mysql@5.7/bin:/usr/local/opt/openssl/bin:/Library/Frameworks/Python.framework/Versions/3.5/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/go/bin:/Library/Apple/usr/bin:/Users/ndy/data/www/flutter/flutter/bin:/usr/local/go/bin:/Users/ndy/go/bin
+
+Yarn version: 
+  1.22.18
+
+Node version: 
+  16.16.0
+
+Platform: 
+  darwin x64
+
+Trace: 
+  SyntaxError: /Users/ndy/data/www/vscode/getx_create_page/package.json: Unexpected token } in JSON at position 1081
+      at JSON.parse (<anonymous>)
+      at /usr/local/lib/node_modules/yarn/lib/cli.js:1625:59
+      at Generator.next (<anonymous>)
+      at step (/usr/local/lib/node_modules/yarn/lib/cli.js:310:30)
+      at /usr/local/lib/node_modules/yarn/lib/cli.js:321:13
+
+npm manifest: 
+  {
+    "name": "getx-create-page",
+    "publisher": "zxc",
+    "displayName": "Flutter Getx Create Page",
+    "description": "getx 文件生成器",
+    "version": "0.0.4",
+    "engines": {
+      "vscode": "^1.68.0"
+    },
+    "categories": [
+      "Other"
+    ],
+    "activationEvents": [
+      "onCommand:getx-create-page.helloWorld"
+    ],
+    "main": "./extension.js",
+    "contributes": {
+      "commands": [
+        {
+          "command": "getx-create-page.helloWorld",
+          "title": "Flutter: Getx Create Page"
+        }
+      ],
+      "menus": {
+        "explorer/context": [
+          {
+            "command": "getx-create-page.helloWorld",
+            "group": "navigation",
+            "when": "explorerResourceIsFolder"
+          }
+        ]
+      }
+    },
+    "icon": "media/getx.png",
+    "scripts": {
+      "lint": "eslint .",
+      "pretest": "npm run lint",
+      "test": "node ./test/runTest.js"
+    },
+    "devDependencies": {
+      "@types/vscode": "^1.68.0",
+      "@types/glob": "^7.2.0",
+      "@types/mocha": "^9.1.1",
+      "@types/node": "16.x",
+      "eslint": "^8.16.0",
+      "glob": "^8.0.3",
+      "mocha": "^10.0.0",
+      "typescript": "^4.7.2",
+    }
+  }
+
+yarn manifest: 
+  No manifest
+
+Lockfile: 
+  No lockfile
