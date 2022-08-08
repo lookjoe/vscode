@@ -3,7 +3,7 @@
   "publisher": "zxc",
   "displayName": "Flutter Getx Create Page",
   "description": "getx 文件生成器",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "engines": {
     "vscode": "^1.68.0"
   },
