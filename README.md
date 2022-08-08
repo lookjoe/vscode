@@ -4,13 +4,20 @@
 ## 使用方法
 
 ### 方法一
-    command+shift+p 搜索 Flutter: GetX Create Page 输入文件名称
+```
+command+shift+p 搜索 Flutter: GetX Create Page 输入文件名称
+```
 
 ### 方法二
-    右键目录选择Flutter: GetX Create Page输入文件名称
+```
+右键目录选择Flutter: GetX Create Page输入文件名称
+```
 
 ### 例
-    输入  demo_page 
+```
+输入  demo_page 
+```
+
 ```
 生成  demo_page
         logic.dart

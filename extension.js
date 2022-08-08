@@ -1,9 +1,9 @@
 // The module 'vscode' contains the VS Code extensibility API
 // Import the module and reference it with the alias vscode in your code below
-const vscode = require('vscode');
-const fs = require('fs');
+import { commands, window } from 'vscode';
+import { existsSync, mkdirSync, writeFileSync } from 'fs';
 
-function getLogic(path) {
+function createLogic(path) {
   return `import 'package:get/get.dart';
   
 import 'state.dart';
@@ -13,12 +13,12 @@ class ${path}Logic extends GetxController {
 }`
 }
 
-function getState(path) {
+function createState(path) {
   return `class ${path}State {
 }`
 }
 
-function getView(path) {
+function createView(path) {
   return `import 'package:flutter/material.dart';
 import 'package:get/get.dart';
   
@@ -64,28 +64,28 @@ function activate(context) {
 	// The command has been defined in the package.json file
 	// Now provide the implementation of the command with  registerCommand
 	// The commandId parameter must match the command field in package.json
-	let disposable = vscode.commands.registerCommand('getx-create-page.helloWorld', function (args) {
+	let disposable = commands.registerCommand('getx-create-page.helloWorld', function (args) {
 		// The code you place here will be executed every time your command is executed
 
 		// Display a message box to the user
-    vscode.window.showInputBox({
+    window.showInputBox({
       placeHolder:'输入文件夹名称', 
       prompt: "文件夹里生成view.dart、logic.dart、state.dart",
     }).then((path) =>{
       if (!path) {
         return
       }
-      if (!fs.existsSync(`${args.path}/${path}`)) {
-        fs.mkdirSync(`${args.path}/${path}`);
+      if (!existsSync(`${args.path}/${path}`)) {
+        mkdirSync(`${args.path}/${path}`);
 
         let fileName = changePathFunc(path);
-        fs.writeFileSync(`${args.path}/${path}/logic.dart`, getLogic(fileName));
-        fs.writeFileSync(`${args.path}/${path}/state.dart`, getState(fileName));
-        fs.writeFileSync(`${args.path}/${path}/view.dart`, getView(fileName));
+        writeFileSync(`${args.path}/${path}/logic.dart`, createLogic(fileName));
+        writeFileSync(`${args.path}/${path}/state.dart`, createState(fileName));
+        writeFileSync(`${args.path}/${path}/view.dart`, createView(fileName));
 
-		    vscode.window.showInformationMessage(`${path}文件夹创建成功!`);
+		    window.showInformationMessage(`${path}文件夹创建成功!`);
       } else {
-        vscode.window.showErrorMessage(`'${args.path}'目录下${path}文件夹已存在!`);
+        window.showErrorMessage(`'${args.path}'目录下${path}文件夹已存在!`);
       }
     });
 	});
@@ -93,10 +93,6 @@ function activate(context) {
 	context.subscriptions.push(disposable);
 }
 
-// this method is called when your extension is deactivated
-function deactivate() {}
-
-module.exports = {
-	activate,
-	deactivate
+export default {
+	activate
 }
